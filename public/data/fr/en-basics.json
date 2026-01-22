@@ -1,0 +1,105 @@
+{
+  "title": "French basics",
+  "data": [
+    {
+      "french": "Bonjour",
+      "english": "Hello / Good morning",
+      "context": "Greeting"
+    },
+    {
+      "french": "S'il vous plaît",
+      "english": "Please",
+      "context": "Politeness"
+    },
+    {
+      "french": "Merci beaucoup",
+      "english": "Thank you very much",
+      "context": "Politeness"
+    },
+    {
+      "french": "Comment ça va ?",
+      "english": "How are you?",
+      "context": "Conversation"
+    },
+    {
+      "french": "Je ne comprends pas",
+      "english": "I don't understand",
+      "context": "Help"
+    },
+    {
+      "french": "Où sont les toilettes ?",
+      "english": "Where is the bathroom?",
+      "context": "Question"
+    },
+    {
+      "french": "Enchanté(e)",
+      "english": "Nice to meet you",
+      "context": "Greeting"
+    },
+    {
+      "french": "Excusez-moi",
+      "english": "Excuse me",
+      "context": "Politeness"
+    },
+    {
+      "french": "À bientôt",
+      "english": "See you soon",
+      "context": "Farewell"
+    },
+    {
+      "french": "Parlez-vous anglais ?",
+      "english": "Do you speak English?",
+      "context": "Question"
+    },
+    {
+      "french": "Je voudrais...",
+      "english": "I would like...",
+      "context": "Ordering/Requests"
+    },
+    {
+      "french": "Combien ça coûte ?",
+      "english": "How much does it cost?",
+      "context": "Shopping"
+    },
+    {
+      "french": "C'est délicieux",
+      "english": "It is delicious",
+      "context": "Dining"
+    },
+    {
+      "french": "Désolé / Pardon",
+      "english": "Sorry / Pardon me",
+      "context": "Politeness"
+    },
+    {
+      "french": "Pas de problème",
+      "english": "No problem",
+      "context": "Conversation"
+    },
+    {
+      "french": "Quelle heure est-il ?",
+      "english": "What time is it?",
+      "context": "Question"
+    },
+    {
+      "french": "De rien",
+      "english": "You're welcome",
+      "context": "Politeness"
+    },
+    {
+      "french": "Pouvez-vous m'aider ?",
+      "english": "Can you help me?",
+      "context": "Help"
+    },
+    {
+      "french": "D'accord",
+      "english": "Okay / I agree",
+      "context": "Conversation"
+    },
+    {
+      "french": "Bonne journée",
+      "english": "Have a nice day",
+      "context": "Farewell"
+    }
+  ]
+}
