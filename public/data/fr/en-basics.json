@@ -2,103 +2,103 @@
   "title": "French basics",
   "data": [
     {
-      "french": "Bonjour",
-      "english": "Hello / Good morning",
+      "foreign": "Bonjour",
+      "native": "Hello / Good morning",
       "context": "Greeting"
     },
     {
-      "french": "S'il vous plaît",
-      "english": "Please",
+      "foreign": "S'il vous plaît",
+      "native": "Please",
       "context": "Politeness"
     },
     {
-      "french": "Merci beaucoup",
-      "english": "Thank you very much",
+      "foreign": "Merci beaucoup",
+      "native": "Thank you very much",
       "context": "Politeness"
     },
     {
-      "french": "Comment ça va ?",
-      "english": "How are you?",
+      "foreign": "Comment ça va ?",
+      "native": "How are you?",
       "context": "Conversation"
     },
     {
-      "french": "Je ne comprends pas",
-      "english": "I don't understand",
+      "foreign": "Je ne comprends pas",
+      "native": "I don't understand",
       "context": "Help"
     },
     {
-      "french": "Où sont les toilettes ?",
-      "english": "Where is the bathroom?",
+      "foreign": "Où sont les toilettes ?",
+      "native": "Where is the bathroom?",
       "context": "Question"
     },
     {
-      "french": "Enchanté(e)",
-      "english": "Nice to meet you",
+      "foreign": "Enchanté(e)",
+      "native": "Nice to meet you",
       "context": "Greeting"
     },
     {
-      "french": "Excusez-moi",
-      "english": "Excuse me",
+      "foreign": "Excusez-moi",
+      "native": "Excuse me",
       "context": "Politeness"
     },
     {
-      "french": "À bientôt",
-      "english": "See you soon",
+      "foreign": "À bientôt",
+      "native": "See you soon",
       "context": "Farewell"
     },
     {
-      "french": "Parlez-vous anglais ?",
-      "english": "Do you speak English?",
+      "foreign": "Parlez-vous anglais ?",
+      "native": "Do you speak English?",
       "context": "Question"
     },
     {
-      "french": "Je voudrais...",
-      "english": "I would like...",
+      "foreign": "Je voudrais...",
+      "native": "I would like...",
       "context": "Ordering/Requests"
     },
     {
-      "french": "Combien ça coûte ?",
-      "english": "How much does it cost?",
+      "foreign": "Combien ça coûte ?",
+      "native": "How much does it cost?",
       "context": "Shopping"
     },
     {
-      "french": "C'est délicieux",
-      "english": "It is delicious",
+      "foreign": "C'est délicieux",
+      "native": "It is delicious",
       "context": "Dining"
     },
     {
-      "french": "Désolé / Pardon",
-      "english": "Sorry / Pardon me",
+      "foreign": "Désolé / Pardon",
+      "native": "Sorry / Pardon me",
       "context": "Politeness"
     },
     {
-      "french": "Pas de problème",
-      "english": "No problem",
+      "foreign": "Pas de problème",
+      "native": "No problem",
       "context": "Conversation"
     },
     {
-      "french": "Quelle heure est-il ?",
-      "english": "What time is it?",
+      "foreign": "Quelle heure est-il ?",
+      "native": "What time is it?",
       "context": "Question"
     },
     {
-      "french": "De rien",
-      "english": "You're welcome",
+      "foreign": "De rien",
+      "native": "You're welcome",
       "context": "Politeness"
     },
     {
-      "french": "Pouvez-vous m'aider ?",
-      "english": "Can you help me?",
+      "foreign": "Pouvez-vous m'aider ?",
+      "native": "Can you help me?",
       "context": "Help"
     },
     {
-      "french": "D'accord",
-      "english": "Okay / I agree",
+      "foreign": "D'accord",
+      "native": "Okay / I agree",
       "context": "Conversation"
     },
     {
-      "french": "Bonne journée",
-      "english": "Have a nice day",
+      "foreign": "Bonne journée",
+      "native": "Have a nice day",
       "context": "Farewell"
     }
   ]
