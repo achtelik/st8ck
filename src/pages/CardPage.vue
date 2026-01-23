@@ -4,7 +4,7 @@
   import { useCardPageStore } from '@/stores/CardPageStore.ts'
 
   const store = useCardPageStore()
-  const data = computed(() => store.data)
+  const { data, dataIndex } = storeToRefs(store)
 
   onMounted(() => {
     store.loadData()
@@ -14,7 +14,7 @@
 <template>
   <div v-if="data && data.data">
     CardPage
-    <m-card v-if="data.data[0]" :data="data.data[0]" />
+    <m-card :data="data.data[dataIndex]!" @m-next="store.increaseDataIndex()" />
   </div>
 </template>
 
