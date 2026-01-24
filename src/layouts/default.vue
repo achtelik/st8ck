@@ -1,5 +1,5 @@
 <template>
-  <v-main class="main">
+  <v-main :class="{main: true, 'main-desktop': !mobile}">
     <router-view />
   </v-main>
 
@@ -7,7 +7,11 @@
 </template>
 
 <script lang="ts" setup>
-//
+
+  import { useDisplay } from 'vuetify/framework'
+
+  const { mobile } = useDisplay()
+
 </script>
 
 <style scoped lang="sass">
@@ -16,7 +20,9 @@
   display: flex
   justify-content: center
   align-items: center
-  min-height: 100vh
   max-width: 800px
   width: 100%
+
+.main-desktop
+  min-height: 100vh
 </style>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import type { DataEntry } from '@/stores/CardPageStore.types.ts'
-  import { useDisplay } from 'vuetify/framework'
+  import MDivider from '@/components/MDivider.vue'
 
   interface Props {
     data: DataEntry
@@ -8,17 +8,16 @@
 
   const props = defineProps<Props>()
 
-  const { mobile, name } = useDisplay()
-
   const reveal = ref(false)
   const input = ref<string>()
+  const swapped = ref<boolean>(false)
 
   // Watch for changes in props.data and reset reveal
   watch(() => props.data, () => {
     reveal.value = false
   })
 
-  const emit = defineEmits(['m-next'])
+  const emit = defineEmits(['m-next', 'm-swap'])
 
   function triggerReveal () {
     reveal.value = true
@@ -30,47 +29,73 @@
     emit('m-next')
   }
 
-  function speakForeignText () {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(props.data.foreign)
-      // Set the language for the speech.
-      // Based on your data example (fr/en-basics.json), the foreign language appears to be French.
-      // You might want to make this dynamic if your app supports multiple foreign languages.
-      utterance.lang = 'de-DE' // Example: Set language to French
-      window.speechSynthesis.speak(utterance)
-    } else {
-      console.warn('Speech Synthesis API not supported in this browser.')
-      // Optionally, you can provide a user-friendly message or fallback here.
-      alert('Your browser does not support text-to-speech functionality.')
-    }
+  function triggerSwap () {
+    swapped.value = !swapped.value
+    emit('m-swap')
+  }
+
+  function playAudio () {
+    new Audio(`data/fr/audio/${props.data.audio}`).play().catch(error => {
+      console.log('Wiedergabe verhindert: Nutzerinteraktion erforderlich!', error)
+    })
   }
 </script>
 
 <template>
   <v-card>
     <v-card-text>
-      <h1>{{ data.foreign }}</h1>
-      <v-btn icon variant="text" @click="speakForeignText">
-        <v-icon>mdi-volume-high</v-icon>
-      </v-btn>
-      <i>{{ data.context }}</i>
-      <v-text-field v-model="input" label="Your solution" />
-      <h1>{{ reveal ? data.native : '&nbsp;' }}</h1>
+      <p class="text-center">France</p>
+      <h1 class="text">{{ reveal || !swapped ? data.foreign : '&nbsp;' }}</h1>
+      <div class="topActions">
+        <v-btn icon variant="text" @click="playAudio">
+          <v-icon>mdi-volume-high</v-icon>
+        </v-btn>
+
+      </div>
+      <div class="middleArea">
+        <v-btn disabled icon variant="text" />
+        <v-text-field
+          v-model="input"
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
+          class="centered-input"
+          color="primary"
+          inputmode="text"
+          label="Your solution"
+          name="no-autofill"
+          spellcheck="false"
+          variant="underlined"
+        />
+        <v-btn icon variant="text" @click="triggerSwap()">
+          <v-icon>mdi-swap-vertical</v-icon>
+        </v-btn>
+      </div>
+      <p class="text">English</p>
+      <h1 class="text-center">{{ reveal || swapped ? data.native : '&nbsp;' }}</h1>
     </v-card-text>
     <v-card-actions>
       <v-btn
-        v-if="!mobile && !reveal"
-        class="w-100"
+        v-if=" !reveal"
+        class="cardAction"
         color="teal-accent-4"
         text="Reveal"
         variant="outlined"
         @click="triggerReveal()"
       />
       <v-btn
-        v-if="!mobile && reveal"
-        class="w-100"
-        color="teal-accent-4"
-        text="Next"
+        v-if="reveal"
+        class="cardAction"
+        color="green-accent-4"
+        text="Correct"
+        variant="tonal"
+        @click="triggerNext()"
+      />
+      <v-btn
+        v-if="reveal"
+        class="cardAction"
+        color="red-accent-4"
+        text="Wrong"
         variant="tonal"
         @click="triggerNext()"
       />
@@ -79,5 +104,27 @@
 </template>
 
 <style scoped lang="sass">
+.topActions
+  display: flex
+  justify-content: center
 
+.middleArea
+  display: flex
+  align-items: center
+
+.centered-input :deep(.v-field__field)
+  justify-content: center
+
+.centered-input :deep(.v-field__outline)
+  justify-content: center
+
+.centered-input :deep(input)
+  text-align: center
+
+.text
+  padding: 8px 0
+  text-align: center
+
+.cardAction
+  flex: 1 1 auto
 </style>

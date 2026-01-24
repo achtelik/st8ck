@@ -7,4 +7,5 @@ export interface DataEntry {
   foreign: string
   native: string
   context: string
+  audio: string
 }

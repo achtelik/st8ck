@@ -3,101 +3,121 @@
   "data": [
     {
       "foreign": "Bonjour",
+      "audio": "bonjour.wav",
       "native": "Hello / Good morning",
       "context": "Greeting"
     },
     {
       "foreign": "S'il vous plaît",
+      "audio": "s_il_vous_plait.wav",
       "native": "Please",
       "context": "Politeness"
     },
     {
       "foreign": "Merci beaucoup",
+      "audio": "merci_beaucoup.wav",
       "native": "Thank you very much",
       "context": "Politeness"
     },
     {
       "foreign": "Comment ça va?",
+      "audio": "comment_ca_va_.wav",
       "native": "How are you?",
       "context": "Conversation"
     },
     {
       "foreign": "Je ne comprends pas",
+      "audio": "je_ne_comprends_pas.wav",
       "native": "I don't understand",
       "context": "Help"
     },
     {
       "foreign": "Où sont les toilettes ?",
+      "audio": "ou_sont_les_toilettes_.wav",
       "native": "Where is the bathroom?",
       "context": "Question"
     },
     {
       "foreign": "Enchanté(e)",
+      "audio": "enchante_e_.wav",
       "native": "Nice to meet you",
       "context": "Greeting"
     },
     {
       "foreign": "Excusez-moi",
+      "audio": "excusez_moi.wav",
       "native": "Excuse me",
       "context": "Politeness"
     },
     {
       "foreign": "À bientôt",
+      "audio": "a_bientot.wav",
       "native": "See you soon",
       "context": "Farewell"
     },
     {
       "foreign": "Parlez-vous anglais ?",
+      "audio": "parlez_vous_anglais_.wav",
       "native": "Do you speak English?",
       "context": "Question"
     },
     {
       "foreign": "Je voudrais...",
+      "audio": "je_voudrais_.wav",
       "native": "I would like...",
       "context": "Ordering/Requests"
     },
     {
       "foreign": "Combien ça coûte ?",
+      "audio": "combien_ca_coute_.wav",
       "native": "How much does it cost?",
       "context": "Shopping"
     },
     {
       "foreign": "C'est délicieux",
+      "audio": "c_est_delicieux.wav",
       "native": "It is delicious",
       "context": "Dining"
     },
     {
       "foreign": "Désolé / Pardon",
+      "audio": "desole_pardon.wav",
       "native": "Sorry / Pardon me",
       "context": "Politeness"
     },
     {
       "foreign": "Pas de problème",
+      "audio": "pas_de_probleme.wav",
       "native": "No problem",
       "context": "Conversation"
     },
     {
       "foreign": "Quelle heure est-il ?",
+      "audio": "quelle_heure_est_il_.wav",
       "native": "What time is it?",
       "context": "Question"
     },
     {
       "foreign": "De rien",
+      "audio": "de_rien.wav",
       "native": "You're welcome",
       "context": "Politeness"
     },
     {
       "foreign": "Pouvez-vous m'aider ?",
+      "audio": "pouvez_vous_m_aider_.wav",
       "native": "Can you help me?",
       "context": "Help"
     },
     {
       "foreign": "D'accord",
+      "audio": "d_accord.wav",
       "native": "Okay / I agree",
       "context": "Conversation"
     },
     {
       "foreign": "Bonne journée",
+      "audio": "bonne_journee.wav",
       "native": "Have a nice day",
       "context": "Farewell"
     }

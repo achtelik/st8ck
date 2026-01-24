@@ -84,5 +84,8 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    allowedHosts: [
+      'm-pc', // Dein PC-Name
+    ],
   },
 })

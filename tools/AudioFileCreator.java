@@ -12,87 +12,86 @@ import java.text.Normalizer;
 
 public class AudioFileCreator {
     public static void main(String[] args) {
-        // Pfad relativ zum aktuellen Verzeichnis: eine Ebene hoch, dann in public/...
-        Path pfad = Paths.get( "public", "data", "fr", "en-basics.json").normalize();
+        Path jsonPfad = Paths.get("public", "data", "fr", "en-basics.json").normalize();
+        Path zielOrdner = jsonPfad.getParent();
+
+        if (!Files.exists(jsonPfad)) {
+            System.err.println("Datei nicht gefunden: " + jsonPfad.toAbsolutePath());
+            return;
+        }
 
         try {
-            if (!Files.exists(pfad)) {
-                System.err.println("Datei nicht gefunden unter: " + pfad.toAbsolutePath());
-                return;
-            }
-
-            String inhalt = Files.readString(pfad);
-
-            // KORREKT: Pattern.compile statt Pattern.collect
-            Pattern pattern = Pattern.compile("\"foreign\"\\s*:\\s*\"([^\"]+)\"");
+            String inhalt = Files.readString(jsonPfad);
+            // Wir suchen nach den Objekten im Array
+            Pattern pattern = Pattern.compile("\\{\\s*\"foreign\"\\s*:\\s*\"([^\"]+)\"");
             Matcher matcher = pattern.matcher(inhalt);
 
+            StringBuilder neuerInhalt = new StringBuilder();
             HttpClient client = HttpClient.newHttpClient();
+            int lastEnd = 0;
 
-            System.out.println("Lese Datei: " + pfad);
-            System.out.println("Gefundene 'foreign' Einträge:");
-            System.out.println("---------------------------------");
+            System.out.println("Verarbeite Vokabeln...");
 
-            boolean gefunden = false;
             while (matcher.find()) {
-                String foreignText = matcher.group(1);
-                System.out.println("-> " + matcher.group(1));
-                gefunden = true;
+                // Text vor dem Treffer anfügen
+                neuerInhalt.append(inhalt, lastEnd, matcher.end());
 
-                // 1. Akzente entfernen (z.B. "garçon" -> "garcon")
-                String ohneAkzente = Normalizer.normalize(foreignText, Normalizer.Form.NFD)
-                        .replaceAll("\\p{M}", "");
+                String originalText = matcher.group(1);
 
-                // 2. Alles zu Kleinschreibung und Sonderzeichen durch Unterstrich ersetzen
-                String dateiName = ohneAkzente.toLowerCase()
+                // 1. Dateinamen generieren (ASCII safe)
+                String safeName = Normalizer.normalize(originalText, Normalizer.Form.NFD)
+                        .replaceAll("\\p{M}", "")
+                        .toLowerCase()
                         .replaceAll("[^a-z0-9]", "_")
-                        .replaceAll("_+", "_") // Doppelte Unterstriche vermeiden
-                        + ".wav";
-                Path audioDatei = pfad.getParent().resolve(dateiName);
+                        .replaceAll("_+", "_");
+                String dateiName = safeName + ".wav";
 
-                System.out.println("Verarbeite: " + foreignText + " -> " + audioDatei.getFileName());
+                // 2. Audio-Request (TTS)
+                bearbeiteAudio(client, originalText, zielOrdner.resolve(dateiName));
 
-                String jsonBody = String.format(
-                        "{\"model\": \"voice-fr-siwis-low\", \"backend\": \"piper\", \"input\": \"%s\"}",
-                        foreignText
-                );
+                // 3. Das neue URL-Attribut in den JSON-String einfügen
+                // Wir fügen es direkt nach dem "foreign": "..." Feld ein
+                neuerInhalt.append("\n      \"audio\": \"").append(dateiName).append("\",");
 
-                HttpRequest request = HttpRequest.newBuilder()
-                        .uri(URI.create("http://localhost:8080/tts"))
-                        .header("Content-Type", "application/json")
-                        .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
-                        .build();
-
-                try {
-                    // Wir erwarten ein Byte-Array (Audio) als Antwort
-                    HttpResponse<byte[]> response = client.send(request, HttpResponse.BodyHandlers.ofByteArray());
-
-                    if (response.statusCode() == 200) {
-                        Files.write(audioDatei, response.body());
-                        System.out.println("  [OK] Gespeichert.");
-                    } else {
-                        System.err.println("  [Fehler] Server meldet Status: " + response.statusCode());
-                    }
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    break;
-                }
+                // Merken, wo wir im Original-String stehen (hinter dem schließenden Anführungszeichen von foreign)
+                lastEnd = matcher.end() + 1;
             }
 
-            if (!gefunden) {
-                System.out.println("Keine Einträge mit dem Schlüssel 'foreign' gefunden.");
-            }
+            // Rest der Datei anfügen
+            neuerInhalt.append(inhalt.substring(lastEnd));
+
+            // 4. Datei überschreiben
+            Files.writeString(jsonPfad, neuerInhalt.toString());
+            System.out.println("---------------------------------");
+            System.out.println("JSON-Datei erfolgreich aktualisiert!");
 
         } catch (IOException e) {
-            System.err.println("Fehler beim Lesen der Datei: " + e.getMessage());
+            System.err.println("Fehler: " + e.getMessage());
         }
     }
 
-    public String normalizeText(String text) {
-        // 1. Zerlegt Zeichen wie 'é' in 'e' + '´' (NFD Normalisierung)
-        String nfdNormalizedString = Normalizer.normalize(text, Normalizer.Form.NFD);
+    private static void bearbeiteAudio(HttpClient client, String text, Path zielPfad) {
+        String jsonBody = String.format(
+                "{\"model\": \"voice-fr-siwis-low\", \"backend\": \"piper\", \"input\": \"%s\"}",
+                text
+        );
 
-        // 2. Entfernt alle Akzent-Symbole mittels Regex (Unicode Kategorie "M" für Marks)
-        return nfdNormalizedString.replaceAll("\\p{M}", "");
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/tts"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                .build();
+
+        try {
+            HttpResponse<byte[]> response = client.send(request, HttpResponse.BodyHandlers.ofByteArray());
+            if (response.statusCode() == 200) {
+                Files.write(zielPfad, response.body());
+                System.out.println("  [Audio OK] " + zielPfad.getFileName());
+            } else {
+                System.err.println("  [Fehler] Server-Status: " + response.statusCode());
+            }
+        } catch (Exception e) {
+            System.err.println("  [Fehler] Request fehlgeschlagen: " + e.getMessage());
+        }
     }
 }

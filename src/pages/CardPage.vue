@@ -1,10 +1,12 @@
 <script setup lang="ts">
 
+  import { useDisplay } from 'vuetify/framework'
   import MCard from '@/components/MCard.vue'
   import { useCardPageStore } from '@/stores/CardPageStore.ts'
 
   const store = useCardPageStore()
   const { data, dataIndex } = storeToRefs(store)
+  const { mobile } = useDisplay()
 
   const finished = computed(() => {
     return data.value && data.value.data && data.value.data.length <= dataIndex.value
@@ -16,26 +18,8 @@
 </script>
 
 <template>
-  <div v-if="data && data.data" class="content">
-    <m-card class="card" v-if="!finished" :data="data.data[dataIndex]!" @m-next="store.increaseDataIndex()" />
-
-    <div class="actions">
-      <v-btn
-        class="w-100"
-        color="teal-accent-4"
-        text="Reveal"
-        variant="outlined"
-        @click=""
-      />
-      <v-btn
-        v-if="false"
-        class="w-100"
-        color="teal-accent-4"
-        text="Next"
-        variant="tonal"
-        @click=""
-      />
-    </div>
+  <div v-if="data && data.data" :class="{content:true, 'content-desktop' : !mobile}">
+    <m-card v-if="!finished" class="card" :data="data.data[dataIndex]!" @m-next="store.increaseDataIndex()" />
     <template v-if="finished">
       Finished
     </template>
@@ -48,11 +32,13 @@
   flex-direction: column
   height: 100%
   width: 100%
-  align-items: center
-  padding: 0px 8px
+  padding: 8px
+
+.content-desktop
+  justify-content: center
 
 .card
-  margin-top: auto
+  //margin-top: auto
   width: 100%
 
 .actions
