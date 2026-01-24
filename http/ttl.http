@@ -1,0 +1,77 @@
+# curl http://localhost:8080/tts -H "Content-Type: application/json" -d '{
+#  "input": "Hello world",
+#  "model": "tts"
+#}'
+POST http://localhost:8080/tts
+Content-Type: application/json
+
+{
+  "input": "Hello world",
+  "model": "tts"
+}
+
+###
+
+
+###
+
+# curl http://localhost:8080/tts -H "Content-Type: application/json" -d '{
+#     "backend": "bark",
+#     "input":"Hello!",
+#     "model": "v2/en_speaker_4"
+#   }'
+POST http://localhost:8080/tts
+Content-Type: application/json
+
+{
+  "backend": "bark-cpp",
+  "input": "Bonjour!",
+  "model": "v2/en_speaker_0"
+}
+
+###
+# curl http://localhost:8080/tts -H "Content-Type: application/json" -d '{
+#     "backend": "bark",
+#     "input":"Hello!"
+#   }'
+POST http://localhost:8080/tts
+Content-Type: application/json
+
+{
+  "backend": "bark",
+  "input": "Hello!"
+}
+
+###
+# curl http://localhost:8080/tts -H "Content-Type: application/json" -d '{
+#  "input": "Hello world",
+#  "model": "tts"
+#}'
+POST http://localhost:8080/tts
+Content-Type: application/json
+
+{
+  "input": "Hello world",
+  "model": "tts"
+}
+
+###
+
+
+# curl http://localhost:8080/tts -H "Content-Type: application/json" -d '{
+#  "model":"it-riccardo_fasol-x-low.onnx",
+#  "backend": "piper",
+#  "input": "Ciao, sono Ettore"
+#}'
+POST http://localhost:8080/tts
+Content-Type: application/json
+
+{
+  "model": "voice-fr-siwis-low",
+  "backend": "piper",
+  "input": "Comment ça va?"
+}
+
+###
+
+

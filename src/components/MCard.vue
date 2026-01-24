@@ -1,12 +1,17 @@
 <script setup lang="ts">
   import type { DataEntry } from '@/stores/CardPageStore.types.ts'
+  import { useDisplay } from 'vuetify/framework'
 
   interface Props {
     data: DataEntry
   }
 
   const props = defineProps<Props>()
+
+  const { mobile, name } = useDisplay()
+
   const reveal = ref(false)
+  const input = ref<string>()
 
   // Watch for changes in props.data and reset reveal
   watch(() => props.data, () => {
@@ -14,6 +19,16 @@
   })
 
   const emit = defineEmits(['m-next'])
+
+  function triggerReveal () {
+    reveal.value = true
+  }
+
+  function triggerNext () {
+    reveal.value = false
+    input.value = undefined
+    emit('m-next')
+  }
 
   function speakForeignText () {
     if ('speechSynthesis' in window) {
@@ -39,22 +54,25 @@
         <v-icon>mdi-volume-high</v-icon>
       </v-btn>
       <i>{{ data.context }}</i>
-      <h1>{{ reveal ? data.native : "&nbsp;" }}</h1>
+      <v-text-field v-model="input" label="Your solution" />
+      <h1>{{ reveal ? data.native : '&nbsp;' }}</h1>
     </v-card-text>
     <v-card-actions>
       <v-btn
-        v-if="!reveal"
+        v-if="!mobile && !reveal"
+        class="w-100"
         color="teal-accent-4"
         text="Reveal"
-        variant="text"
-        @click="reveal = true"
+        variant="outlined"
+        @click="triggerReveal()"
       />
       <v-btn
-        v-if="reveal"
+        v-if="!mobile && reveal"
+        class="w-100"
         color="teal-accent-4"
         text="Next"
-        variant="text"
-        @click="emit('m-next')"
+        variant="tonal"
+        @click="triggerNext()"
       />
     </v-card-actions>
   </v-card>

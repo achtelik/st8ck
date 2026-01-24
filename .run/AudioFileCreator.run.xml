@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AudioFileCreator" type="Java Scratch">
+    <option name="MAIN_CLASS_NAME" value="AudioFileCreator" />
+    <module name="st8ck" />
+    <option name="SCRATCH_FILE_URL" value="file://$PROJECT_DIR$/tools/AudioFileCreator.java" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
