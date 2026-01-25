@@ -3,6 +3,7 @@
   import MDivider from '@/components/MDivider.vue'
 
   interface Props {
+    playAudioOnStart: boolean
     data: DataEntry
   }
 
@@ -15,9 +16,15 @@
   // Watch for changes in props.data and reset reveal
   watch(() => props.data, () => {
     reveal.value = false
+    if (props.playAudioOnStart) {
+      playAudio()
+    }
   })
 
-  const emit = defineEmits(['m-next', 'm-swap'])
+  const emit = defineEmits<{
+    (e: 'm-next' | 'm-swap'): void
+    (e: 'm-play-audio-on-start-toggle', value: boolean): void
+  }>()
 
   function triggerReveal () {
     reveal.value = true
@@ -34,6 +41,10 @@
     emit('m-swap')
   }
 
+  function triggerPlayAudioOnStartToggle () {
+    emit('m-play-audio-on-start-toggle', !props.playAudioOnStart)
+  }
+
   function playAudio () {
     new Audio(`data/fr/audio/${props.data.audio}`).play().catch(error => {
       console.log('Wiedergabe verhindert: Nutzerinteraktion erforderlich!', error)
@@ -44,7 +55,27 @@
 <template>
   <v-card>
     <v-card-text>
-      <p class="text-center">France</p>
+      <div class="topHeaderArea">
+        <v-btn disabled icon variant="text" />
+        <p class="text-center">France</p>
+        <v-menu>
+          <template #activator="{ props: activatorProps }">
+            <v-btn icon="mdi-dots-vertical" variant="text" v-bind="activatorProps" />
+          </template>
+
+          <v-list>
+            <v-list-item>
+              <v-switch
+                color="purple"
+                hide-details
+                label="Play audio on start"
+                :model-value="playAudioOnStart"
+                @update:model-value="triggerPlayAudioOnStartToggle()"
+              />
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
       <h1 class="text">{{ reveal || !swapped ? data.foreign : '&nbsp;' }}</h1>
       <div class="topActions">
         <v-btn icon variant="text" @click="playAudio">
@@ -104,6 +135,11 @@
 </template>
 
 <style scoped lang="sass">
+.topHeaderArea
+  display: flex
+  align-items: center
+  justify-content: space-between
+
 .topActions
   display: flex
   justify-content: center

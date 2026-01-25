@@ -13,7 +13,7 @@ import java.text.Normalizer;
 public class AudioFileCreator {
     public static void main(String[] args) {
         Path jsonPfad = Paths.get("public", "data", "fr", "en-basics.json").normalize();
-        Path zielOrdner = jsonPfad.getParent();
+        Path zielOrdner = jsonPfad.getParent().resolve("audio");
 
         if (!Files.exists(jsonPfad)) {
             System.err.println("Datei nicht gefunden: " + jsonPfad.toAbsolutePath());
@@ -51,7 +51,7 @@ public class AudioFileCreator {
 
                 // 3. Das neue URL-Attribut in den JSON-String einfügen
                 // Wir fügen es direkt nach dem "foreign": "..." Feld ein
-                neuerInhalt.append("\n      \"audio\": \"").append(dateiName).append("\",");
+                neuerInhalt.append(",\n      \"audio\": \"").append(dateiName).append("\",");
 
                 // Merken, wo wir im Original-String stehen (hinter dem schließenden Anführungszeichen von foreign)
                 lastEnd = matcher.end() + 1;

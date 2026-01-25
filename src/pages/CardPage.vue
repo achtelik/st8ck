@@ -8,6 +8,8 @@
   const { data, dataIndex } = storeToRefs(store)
   const { mobile } = useDisplay()
 
+  const playAudioOnStart = ref<boolean>(true)
+
   const finished = computed(() => {
     return data.value && data.value.data && data.value.data.length <= dataIndex.value
   })
@@ -19,7 +21,14 @@
 
 <template>
   <div v-if="data && data.data" :class="{content:true, 'content-desktop' : !mobile}">
-    <m-card v-if="!finished" class="card" :data="data.data[dataIndex]!" @m-next="store.increaseDataIndex()" />
+    <m-card
+      v-if="!finished"
+      class="card"
+      :data="data.data[dataIndex]!"
+      :play-audio-on-start="playAudioOnStart"
+      @m-next="store.increaseDataIndex()"
+      @m-play-audio-on-start-toggle="playAudioOnStart = !playAudioOnStart"
+    />
     <template v-if="finished">
       Finished
     </template>
