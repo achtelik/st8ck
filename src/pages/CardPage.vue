@@ -3,8 +3,10 @@
   import { useDisplay } from 'vuetify/framework'
   import MCard from '@/components/MCard.vue'
   import { useCardPageStore } from '@/stores/CardPageStore.ts'
+  import { useStatisticsStore } from '@/stores/StatisticsStore.ts'
 
   const store = useCardPageStore()
+  const statisticsStore = useStatisticsStore()
   const { data, dataIndex } = storeToRefs(store)
   const { mobile } = useDisplay()
 
@@ -13,6 +15,18 @@
   const finished = computed(() => {
     return data.value && data.value.data && data.value.data.length <= dataIndex.value
   })
+
+  function triggerCorrect (key: string) {
+    store.increaseDataIndex()
+    statisticsStore.addEntry()
+    console.log(key)
+  }
+
+  function triggerWrong (key: string) {
+    store.increaseDataIndex()
+    statisticsStore.addEntry()
+    console.log(key)
+  }
 
   onMounted(() => {
     store.loadData()
@@ -26,8 +40,9 @@
       class="card"
       :data="data.data[dataIndex]!"
       :play-audio-on-start="playAudioOnStart"
-      @m-next="store.increaseDataIndex()"
+      @m-correct="event => triggerCorrect(event)"
       @m-play-audio-on-start-toggle="playAudioOnStart = !playAudioOnStart"
+      @m-wrong="event => triggerWrong(event)"
     />
     <template v-if="finished">
       Finished

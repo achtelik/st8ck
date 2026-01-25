@@ -1,11 +1,12 @@
 export interface Data {
-  title: string
+  key: string
+  foreignLanguage: string
+  nativeLanguage: string
   data: DataEntry[] | undefined
 }
 
 export interface DataEntry {
   foreign: string
-  native: string
-  context: string
   audio: string
+  native: string
 }

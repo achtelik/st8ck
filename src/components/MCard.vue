@@ -24,7 +24,7 @@
   })
 
   const emit = defineEmits<{
-    (e: 'm-next' | 'm-swap'): void
+    (e: 'm-swap'): void
     (e: 'm-correct' | 'm-wrong', text: string): void
     (e: 'm-play-audio-on-start-toggle', value: boolean): void
   }>()
@@ -33,10 +33,16 @@
     reveal.value = true
   }
 
-  function triggerNext () {
+  function triggerCorrect () {
     reveal.value = false
     input.value = undefined
-    emit('m-next')
+    emit('m-correct', props.data.foreign)
+  }
+
+  function triggerWrong () {
+    reveal.value = false
+    input.value = undefined
+    emit('m-wrong', props.data.foreign)
   }
 
   function triggerSwap () {
@@ -139,7 +145,7 @@
         color="green-accent-4"
         text="Correct"
         variant="tonal"
-        @click="triggerNext()"
+        @click="triggerCorrect()"
       />
       <v-btn
         v-if="reveal"
@@ -147,7 +153,7 @@
         color="red-accent-4"
         text="Wrong"
         variant="tonal"
-        @click="triggerNext()"
+        @click="triggerWrong()"
       />
     </v-card-actions>
   </v-card>
