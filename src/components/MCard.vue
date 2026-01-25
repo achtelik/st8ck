@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import type { DataEntry } from '@/stores/CardPageStore.types.ts'
-  import MDivider from '@/components/MDivider.vue'
+  import { useTheme } from 'vuetify/framework'
 
   interface Props {
     playAudioOnStart: boolean
@@ -13,6 +13,8 @@
   const input = ref<string>()
   const swapped = ref<boolean>(false)
 
+  const theme = useTheme()
+
   // Watch for changes in props.data and reset reveal
   watch(() => props.data, () => {
     reveal.value = false
@@ -23,6 +25,7 @@
 
   const emit = defineEmits<{
     (e: 'm-next' | 'm-swap'): void
+    (e: 'm-correct' | 'm-wrong', text: string): void
     (e: 'm-play-audio-on-start-toggle', value: boolean): void
   }>()
 
@@ -45,11 +48,16 @@
     emit('m-play-audio-on-start-toggle', !props.playAudioOnStart)
   }
 
+  function triggerThemeToggle () {
+    theme.toggle()
+  }
+
   function playAudio () {
     new Audio(`data/fr/audio/${props.data.audio}`).play().catch(error => {
       console.log('Wiedergabe verhindert: Nutzerinteraktion erforderlich!', error)
     })
   }
+
 </script>
 
 <template>
@@ -71,6 +79,17 @@
                 label="Play audio on start"
                 :model-value="playAudioOnStart"
                 @update:model-value="triggerPlayAudioOnStartToggle()"
+              />
+            </v-list-item>
+            <v-list-item>
+              <p @click="theme.toggle()">Toggle Light / Dark</p>
+            </v-list-item>
+            <v-list-item>
+              <v-switch
+                hide-details
+                label="Toggle Light / Dark"
+                :model-value="playAudioOnStart"
+                @update:model-value="triggerThemeToggle()"
               />
             </v-list-item>
           </v-list>
