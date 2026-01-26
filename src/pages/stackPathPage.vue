@@ -3,45 +3,37 @@
 </script>
 
 <template>
+  <div class="content">
     <v-timeline align="start">
       <v-timeline-item>
         <template #opposite>
-          Opposite content
-        </template>
-        <div>
           <div class="text-h6">Content title</div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua.
           </p>
-        </div>
+        </template>
       </v-timeline-item>
 
       <v-timeline-item>
         <template #opposite>
-          Opposite content
-        </template>
-        <div>
-          <div class="text-h6">Content title</div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            {{ $t('stackPathPage.availableSoonText') }}
           </p>
-        </div>
+        </template>
       </v-timeline-item>
 
       <v-timeline-item>
         <template #opposite>
-          Opposite content
+          <p>...</p>
         </template>
-        <div>
-          <div class="text-h6">Content title</div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
       </v-timeline-item>
     </v-timeline>
+  </div>
 </template>
 
 <style scoped lang="sass">
-
+.content
+  padding: 8px
 </style>

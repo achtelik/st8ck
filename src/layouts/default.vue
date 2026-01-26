@@ -1,4 +1,5 @@
 <template>
+  <AppHeader />
   <v-main :class="{main: true, 'main-desktop': !mobile}">
     <router-view />
   </v-main>

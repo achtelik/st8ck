@@ -1,26 +1,26 @@
 <script setup lang="ts">
 
-import type {StackTitle} from '@/stores/StackOverviewPageStore.types.ts'
-import {useStackOverviewPageStore} from '@/stores/StackOverviewPageStore.ts'
+  import type { StackTitle } from '@/stores/StackOverviewPageStore.types.ts'
+  import { useStackOverviewPageStore } from '@/stores/StackOverviewPageStore.ts'
 
-const router = useRouter()
-const store = useStackOverviewPageStore()
+  const router = useRouter()
+  const store = useStackOverviewPageStore()
 
-function openStack(pathDataUrl: string) {
-  router.push('/stackPathPage')
-}
-
-function titleTextByCountry(titles: StackTitle[], language: string): StackTitle {
-  const found = titles.find(t => (t.language ?? '').toLowerCase() === language.toLowerCase())
-  if (!found) {
-    throw new Error('Title not found')
+  function openStack (pathDataUrl: string) {
+    router.push('/stackPathPage')
   }
-  return found
-}
 
-onMounted(() => {
-  store.loadData()
-})
+  function titleTextByCountry (titles: StackTitle[], language: string): StackTitle {
+    const found = titles.find(t => (t.language ?? '').toLowerCase() === language.toLowerCase())
+    if (!found) {
+      throw new Error('Title not found')
+    }
+    return found
+  }
+
+  onMounted(() => {
+    store.loadData()
+  })
 </script>
 
 <template>
@@ -29,8 +29,8 @@ onMounted(() => {
       <v-img
         class="align-end"
         cover
-        height="200px"
         gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)"
+        height="200px"
         :src="stack.imageUrl"
         width="400px"
       >
