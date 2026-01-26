@@ -1,13 +1,16 @@
 export interface StatisticsData {
-  key: string
-  foreignLanguage: string
-  nativeLanguage: string
-  data: StatisticsDataEntry[] | undefined
+  data: StatisticStackData[]
 }
 
-export interface StatisticsDataEntry {
+export interface StatisticStackData {
+  key: string // the key of the data set, e.g., "fr-en-basics"
+  foreignLanguage: string
+  nativeLanguage: string
+  data: StatisticsStackDataEntry[]
+}
+
+export interface StatisticsStackDataEntry {
   text: string
-  correctCount: number
-  wrongCount: number
-  totalCount: number
+  correctTimeline: number[] // timestamp as long
+  wrongTimeline: number[] // timestamp as long
 }

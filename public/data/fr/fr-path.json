@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "foreignLanguage": "fr",
+      "nativeLanguage": "en",
+      "stacks": [
+        {
+          "dataUrl": "data/fr/en-basics.json",
+          "imageUrl": "data/fr/en-basics.png",
+          "key": "en-french-basics",
+          "title": "French Basics"
+        }
+      ]
+    }
+  ]
+}

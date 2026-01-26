@@ -2,7 +2,7 @@ import type { Data } from '@/stores/CardPageStore.types.ts'
 // Utilities
 import { defineStore } from 'pinia'
 
-export const useCardPageStore = defineStore('cardPage', () => {
+export const useCardPageStore = defineStore('cardPageStore', () => {
   // 1. State: Use ref() and provide your default value immediately
   const data = ref<Data>()
   const dataIndex = ref(0)

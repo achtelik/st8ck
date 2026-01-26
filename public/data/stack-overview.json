@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": "french",
+      "titles": [
+        {
+          "language": "de",
+          "text": "Französisch"
+        },
+        {
+          "language": "en",
+          "text": "French"
+        }
+      ],
+      "imageUrl": "data/fr/fr.png",
+      "pathDataUrl": "data/fr/fr-path.json"
+    }
+  ]
+}

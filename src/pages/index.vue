@@ -1,6 +1,6 @@
 <template>
-  <v-btn to="/cardPage">
-    Go to Card Page
+  <v-btn to="/stackOverviewPage">
+    Go to Overview
   </v-btn>
 </template>
 

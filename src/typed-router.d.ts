@@ -19,7 +19,9 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
-    '/CardPage': RouteRecordInfo<'/CardPage', '/CardPage', Record<never, never>, Record<never, never>>,
+    '/cardPage': RouteRecordInfo<'/cardPage', '/cardPage', Record<never, never>, Record<never, never>>,
+    '/stackOverviewPage': RouteRecordInfo<'/stackOverviewPage', '/stackOverviewPage', Record<never, never>, Record<never, never>>,
+    '/stackPathPage': RouteRecordInfo<'/stackPathPage', '/stackPathPage', Record<never, never>, Record<never, never>>,
   }
 
   /**
@@ -37,8 +39,16 @@ declare module 'vue-router/auto-routes' {
       routes: '/'
       views: never
     }
-    'src/pages/CardPage.vue': {
-      routes: '/CardPage'
+    'src/pages/cardPage.vue': {
+      routes: '/cardPage'
+      views: never
+    }
+    'src/pages/stackOverviewPage.vue': {
+      routes: '/stackOverviewPage'
+      views: never
+    }
+    'src/pages/stackPathPage.vue': {
+      routes: '/stackPathPage'
       views: never
     }
   }
