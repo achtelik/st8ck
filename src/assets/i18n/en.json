@@ -1,6 +1,11 @@
 {
   "global": {
     "availableSoon": "Available soon",
+    "language": "Language",
+    "languages": {
+      "de": "German",
+      "en": "English"
+    },
     "st8ack": "St8ck"
   },
   "stackPathPage": {
