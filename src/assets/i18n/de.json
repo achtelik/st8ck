@@ -6,7 +6,12 @@
       "de": "Deutsch",
       "en": "Englisch"
     },
+    "save": "Speichern",
     "st8ack": "St8ck"
+  },
+  "profilePage": {
+    "yourLanguage": "Deine Sprache",
+    "yourName": "Dein Name"
   },
   "stackPathPage": {
     "availableSoonText": "Wir haben erst an der Oberfläche gekratzt. Die Möglichkeiten für Erweiterungen sind endlos."

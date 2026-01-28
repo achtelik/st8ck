@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "stacks": [
+        {
+          "dataUrl": "data/fr/basics-xx.json",
+          "imageUrl": "data/fr/image.png",
+        }
+      ]
+    }
+  ]
+}

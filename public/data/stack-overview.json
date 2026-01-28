@@ -12,8 +12,8 @@
           "text": "French"
         }
       ],
-      "imageUrl": "data/fr/fr.png",
-      "pathDataUrl": "data/fr/fr-path.json"
+      "imageUrl": "data/fr/image.png",
+      "pathDataUrl": "data/fr/path.json"
     }
   ]
 }

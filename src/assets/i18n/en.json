@@ -6,7 +6,12 @@
       "de": "German",
       "en": "English"
     },
+    "save": "Save",
     "st8ack": "St8ck"
+  },
+  "profilePage": {
+    "yourLanguage": "Your Language",
+    "yourName": "Your name"
   },
   "stackPathPage": {
     "availableSoonText": "We have only scratched the surface. The possibilities for additions are endless."

@@ -12,7 +12,7 @@ import java.text.Normalizer;
 
 public class AudioFileCreator {
     public static void main(String[] args) {
-        Path jsonPfad = Paths.get("public", "data", "fr", "en-basics.json").normalize();
+        Path jsonPfad = Paths.get("public", "data", "fr", "basics-en.json").normalize();
         Path zielOrdner = jsonPfad.getParent().resolve("audio");
 
         if (!Files.exists(jsonPfad)) {
