@@ -3,7 +3,7 @@
     app
     height="40"
   >
-    <a
+    <!--<a
       v-for="item in items"
       :key="item.title"
       class="d-inline-block mx-2 social-link"
@@ -32,7 +32,7 @@
       >
         MIT License
       </a>
-    </div>
+    </div>-->
   </v-footer>
 </template>
 
