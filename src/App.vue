@@ -21,18 +21,26 @@
 </template>
 
 <script lang="ts" setup>
-  import { useAppStore } from '@/stores/app.ts'
+  import { useTheme } from 'vuetify/framework'
+  import { useAppStore } from '@/stores/AppStore.ts'
   //
   import { useProfileStore } from '@/stores/ProfileStore.ts'
 
   const profileStore = useProfileStore()
   const router = useRouter()
   const appStore = useAppStore()
+  const theme = useTheme()
+
+  watch(() => appStore.themeMode, value => {
+    theme.change(value)
+  })
 
   onMounted(() => {
+    appStore.loadStore()
     profileStore.loadProfile()
     if (!profileStore.profile) {
       router.push('/profilePage')
     }
+    theme.change(appStore.themeMode)
   })
 </script>

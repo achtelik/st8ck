@@ -5,7 +5,7 @@
   import { useI18n } from 'vue-i18n'
   import { useDisplay } from 'vuetify/framework'
   import router from '@/router'
-  import { useAppStore } from '@/stores/app.ts'
+  import { useAppStore } from '@/stores/AppStore.ts'
   import { useProfileStore } from '@/stores/ProfileStore.ts'
 
   const profileStore = useProfileStore()
