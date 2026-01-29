@@ -19,14 +19,6 @@
       </v-btn>
     </v-app-bar-title>
 
-    <!--<v-btn icon>
-      <v-icon>mdi-magnify</v-icon>
-    </v-btn>
-
-    <v-btn icon>
-      <v-icon>mdi-heart</v-icon>
-    </v-btn>
--->
     <v-btn icon @click="toggleTheme">
       <v-icon>{{ theme.global.current.value.dark ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
     </v-btn>
