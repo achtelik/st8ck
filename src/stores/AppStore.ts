@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 export const useAppStore = defineStore('app', () => {
   const STORAGE_KEY = 'app'
   const isLoading = ref<boolean>(false)
-  const themeMode = ref<ThemeMode>('dark')
+  const themeMode = ref<ThemeMode>(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
   const messages = ref<{
     text: string
     timeout: number
