@@ -1,0 +1,19 @@
+<ifModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</ifModule>
+
+<IfModule mod_headers.c>
+# Caching 7 days
+Header set Cache-Control "private, max-age=604800"
+</IfModule>
+
+<IfModule mod_expires.c>
+# Activate expires-Header
+  ExpiresActive On
+  ExpiresDefault "access plus 7 day"
+</IfModule>
