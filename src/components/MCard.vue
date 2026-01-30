@@ -1,10 +1,13 @@
 <script setup lang="ts">
-  import type { DataEntry } from '@/stores/CardPageStore.types.ts'
+  import type { StackItem } from '@/stores/CardPageStore.types.ts'
   import { useTheme } from 'vuetify/framework'
+  import {i18nTextByLanguage} from "@/stores/common.types.ts";
 
   interface Props {
     playAudioOnStart: boolean
-    data: DataEntry
+    foreignLanguage: string
+    nativeLanguage: string
+    data: StackItem
   }
 
   const props = defineProps<Props>()
@@ -54,10 +57,6 @@
     emit('m-play-audio-on-start-toggle', !props.playAudioOnStart)
   }
 
-  function triggerThemeToggle () {
-    theme.toggle()
-  }
-
   function playAudio () {
     new Audio(`data/fr/audio/${props.data.audio}`).play().catch(error => {
       console.log('Wiedergabe verhindert: Nutzerinteraktion erforderlich!', error)
@@ -71,7 +70,7 @@
     <v-card-text>
       <div class="topHeaderArea">
         <v-btn disabled icon variant="text" />
-        <p class="text-center">France</p>
+        <p class="text-center">{{ $t(`global.languages.${foreignLanguage}`) }}</p>
         <v-menu>
           <template #activator="{ props: activatorProps }">
             <v-btn icon="mdi-dots-vertical" variant="text" v-bind="activatorProps" />
@@ -82,20 +81,9 @@
               <v-switch
                 color="purple"
                 hide-details
-                label="Play audio on start"
+                :label="$t(`global.playAudioAutomatically`)"
                 :model-value="playAudioOnStart"
                 @update:model-value="triggerPlayAudioOnStartToggle()"
-              />
-            </v-list-item>
-            <v-list-item>
-              <p @click="theme.toggle()">Toggle Light / Dark</p>
-            </v-list-item>
-            <v-list-item>
-              <v-switch
-                hide-details
-                label="Toggle Light / Dark"
-                :model-value="playAudioOnStart"
-                @update:model-value="triggerThemeToggle()"
               />
             </v-list-item>
           </v-list>
@@ -118,7 +106,7 @@
           class="centered-input"
           color="primary"
           inputmode="text"
-          label="Your solution"
+          :label="$t(`global.yourSolution`)"
           name="no-autofill"
           spellcheck="false"
           variant="underlined"
@@ -127,15 +115,15 @@
           <v-icon>mdi-swap-vertical</v-icon>
         </v-btn>
       </div>
-      <p class="text">English</p>
-      <h1 class="text-center">{{ reveal || swapped ? data.native : '&nbsp;' }}</h1>
+      <p class="text">{{ $t(`global.languages.${nativeLanguage}`) }}</p>
+      <h1 class="text-center">{{ reveal || swapped ? i18nTextByLanguage(data.native, nativeLanguage) : '&nbsp;' }}</h1>
     </v-card-text>
     <v-card-actions>
       <v-btn
         v-if=" !reveal"
         class="cardAction"
         color="teal-accent-4"
-        text="Reveal"
+        :text="$t(`global.uncover`)"
         variant="outlined"
         @click="triggerReveal()"
       />
@@ -143,7 +131,7 @@
         v-if="reveal"
         class="cardAction"
         color="green-accent-4"
-        text="Correct"
+        :text="$t(`global.correct`)"
         variant="tonal"
         @click="triggerCorrect()"
       />
@@ -151,7 +139,7 @@
         v-if="reveal"
         class="cardAction"
         color="red-accent-4"
-        text="Wrong"
+        :text="$t(`global.wrong`)"
         variant="tonal"
         @click="triggerWrong()"
       />

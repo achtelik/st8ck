@@ -1,29 +1,25 @@
-import type { Stack } from '@/stores/CardPageStore.types.ts'
-// Utilities
+import type { StackPath } from '@/stores/StackPathPageStore.types.ts'
 import { defineStore } from 'pinia'
 
-export const useCardPageStore = defineStore('cardPageStore', () => {
+export const useStackPathPageStore = defineStore('stackPathPageStore', () => {
   // 1. State: Use ref() and provide your default value immediately
-  const data = ref<Stack>()
-  const dataIndex = ref(0)
+  const data = ref<StackPath>()
   const isLoading = ref(false)
   const error = ref<string | null>()
 
   // 2. Actions: Just regular functions
-  async function loadData (dataUrl: string) {
-    dataIndex.value = 0
+  async function loadData (stackPathUrl: string) {
     isLoading.value = true
     error.value = null
 
     try {
-      const response = await fetch(dataUrl)
+      const response = await fetch(stackPathUrl)
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
 
-      const jsonData: Stack = await response.json()
-      data.value = jsonData
+      data.value = await response.json()
     } catch (error_) {
       data.value = undefined
       error.value = error_ instanceof Error ? error_.message : 'Unknown error'
@@ -32,17 +28,11 @@ export const useCardPageStore = defineStore('cardPageStore', () => {
     }
   }
 
-  async function increaseDataIndex () {
-    dataIndex.value++
-  }
-
   // 3. Expose everything you want to use in components
   return {
     data,
-    dataIndex,
     isLoading,
     error,
     loadData,
-    increaseDataIndex,
   }
 })

@@ -1,23 +1,17 @@
 <script setup lang="ts">
 
-  import type { StackTitle } from '@/stores/StackOverviewPageStore.types.ts'
+  import { useI18n } from 'vue-i18n'
   import { useDisplay } from 'vuetify/framework'
+  import { type I18nText, i18nTextByLanguage } from '@/stores/common.types.ts'
   import { useStackOverviewPageStore } from '@/stores/StackOverviewPageStore.ts'
 
   const router = useRouter()
   const store = useStackOverviewPageStore()
   const { mobile } = useDisplay()
+  const { locale } = useI18n()
 
-  function openStack (pathDataUrl: string) {
-    router.push('/stackPathPage')
-  }
-
-  function titleTextByCountry (titles: StackTitle[], language: string): StackTitle {
-    const found = titles.find(t => (t.language ?? '').toLowerCase() === language.toLowerCase())
-    if (!found) {
-      throw new Error('Title not found')
-    }
-    return found
+  function openStackPath (pathDataUrl: string) {
+    router.push({ path: '/stackPathPage', query: { dataUrl: pathDataUrl } })
   }
 
   onMounted(() => {
@@ -27,7 +21,7 @@
 
 <template>
   <div v-if="store.data" :class="{content:true, 'content-desktop' : !mobile}">
-    <v-card v-for="stack in store.data?.items" :key="stack.id" @click="openStack(stack.pathDataUrl)">
+    <v-card v-for="stack in store.data?.items" :key="stack.id" @click="openStackPath(stack.pathDataUrl)">
       <v-img
         class="align-end"
         cover
@@ -36,7 +30,7 @@
         width="100%"
       >
         <v-card-title class="title">
-          {{ titleTextByCountry(stack.titles, 'de').text }}
+          {{ i18nTextByLanguage(stack.titles, locale) }}
         </v-card-title>
       </v-img>
     </v-card>

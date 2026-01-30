@@ -1,5 +1,4 @@
 import type { StackOverview } from '@/stores/StackOverviewPageStore.types.ts'
-// Utilities
 import { defineStore } from 'pinia'
 
 export const useStackOverviewPageStore = defineStore('stackOverviewPageStore', () => {
@@ -22,6 +21,7 @@ export const useStackOverviewPageStore = defineStore('stackOverviewPageStore', (
 
       data.value = await response.json()
     } catch (error_) {
+      data.value = undefined
       error.value = error_ instanceof Error ? error_.message : 'Unknown error'
     } finally {
       isLoading.value = false

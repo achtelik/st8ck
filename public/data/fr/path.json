@@ -1,10 +1,62 @@
 {
-  "data": [
+  "title": [
     {
-      "stacks": [
+      "language": "de",
+      "text": "Französisch"
+    },
+    {
+      "language": "en",
+      "text": "French"
+    }
+  ],
+  "items": [
+    {
+      "id": "basics",
+      "dataUrl": "data/fr/basics/data.json",
+      "imageUrl": "data/fr/basics/image.png",
+      "title": [
         {
-          "dataUrl": "data/fr/basics-xx.json",
-          "imageUrl": "data/fr/image.png",
+          "language": "de",
+          "text": "Grundlagen"
+        },
+        {
+          "language": "en",
+          "text": "Basics"
+        }
+      ],
+      "description": [
+        {
+          "language": "de",
+          "text": "Der perfekte Start, um mehr als nur 'Baguette' sagen zu können."
+        },
+        {
+          "language": "en",
+          "text": "The perfect start to saying more than just 'Baguette'."
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "dataUrl": "data/fr/numbers.json",
+      "imageUrl": "data/fr/image.png",
+      "title": [
+        {
+          "language": "de",
+          "text": "Zahlen"
+        },
+        {
+          "language": "en",
+          "text": "Numbers"
+        }
+      ],
+      "description": [
+        {
+          "language": "de",
+          "text": "Lerne die Zahlen — damit du Croissants zählen kannst, statt sie heimlich zu essen."
+        },
+        {
+          "language": "en",
+          "text": "Learn the numbers — so you can count croissants instead of secretly eating them."
         }
       ]
     }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+  import { useI18n } from 'vue-i18n'
   import { useDisplay } from 'vuetify/framework'
   import MCard from '@/components/MCard.vue'
   import { useCardPageStore } from '@/stores/CardPageStore.ts'
@@ -9,53 +10,60 @@
   const statisticsStore = useStatisticsStore()
   const { data, dataIndex } = storeToRefs(store)
   const { mobile } = useDisplay()
+  const route = useRoute()
+  const { locale } = useI18n()
 
   const playAudioOnStart = ref<boolean>(true)
 
   const dataEntry = computed(() => {
-    if (!data.value?.data) return undefined
-    return data.value.data[dataIndex.value]!
+    if (!data.value?.items) return undefined
+    return data.value.items[dataIndex.value]!
   })
   const finished = computed(() => {
-    if (!data.value?.data) return undefined
-    return data.value && data.value.data && data.value.data.length <= dataIndex.value
+    if (!data.value?.items) return undefined
+    return data.value && data.value.items && data.value.items.length <= dataIndex.value
   })
 
   function triggerCorrect (text: string) {
     const tmpEntry = dataEntry.value!
-    statisticsStore.addEntry({
+    /* statisticsStore.addEntry({
       key: data!.value!.key,
       foreignLanguage: tmpEntry.foreign,
       nativeLanguage: tmpEntry.native,
       text: text,
       type: 'wrong',
-    })
+    }) */
     store.increaseDataIndex()
   }
 
   function triggerWrong (text: string) {
     const tmpEntry = dataEntry.value!
-    statisticsStore.addEntry({
+    /* statisticsStore.addEntry({
       key: data!.value!.key,
       foreignLanguage: tmpEntry.foreign,
-      nativeLanguage: tmpEntry.native,
       text: text,
       type: 'wrong',
-    })
+    }) */
     store.increaseDataIndex()
   }
 
+  watch(() => route.query, query => {
+    if (query.dataUrl) store.loadData(query.dataUrl.toString())
+  })
+
   onMounted(() => {
-    store.loadData()
+    if (route.query.dataUrl) store.loadData(route.query.dataUrl.toString())
   })
 </script>
 
 <template>
-  <div v-if="dataEntry" :class="{content:true, 'content-desktop' : !mobile}">
+  <div v-if="data && dataEntry" :class="{content:true, 'content-desktop' : !mobile}">
     <m-card
       v-if="!finished"
       class="card"
       :data="dataEntry"
+      :foreign-language="data?.foreignLanguage"
+      :native-language="locale"
       :play-audio-on-start="playAudioOnStart"
       @m-correct="text => triggerCorrect(text)"
       @m-play-audio-on-start-toggle="playAudioOnStart = !playAudioOnStart"

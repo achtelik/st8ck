@@ -1,15 +1,12 @@
+import type { I18nText } from '@/stores/common.types.ts'
+
 export interface StackOverview {
   items: StackOverviewItem[]
 }
 
 export interface StackOverviewItem {
   id: string
-  titles: StackTitle[]
+  titles: I18nText[]
   imageUrl: string
   pathDataUrl: string
-}
-
-export interface StackTitle {
-  language: string
-  text: string
 }

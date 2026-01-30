@@ -1,14 +1,20 @@
 {
   "global": {
     "availableSoon": "Demnächst verfügbar",
+    "correct": "Richtig",
     "language": "Sprache",
     "languages": {
       "de": "Deutsch",
-      "en": "Englisch"
+      "en": "Englisch",
+      "fr": "Französisch"
     },
+    "playAudioAutomatically": "Audio automatisch abspielen",
     "profile": "Profil",
     "save": "Speichern",
-    "st8ack": "St8ck"
+    "st8ack": "St8ck",
+    "uncover": "Aufdecken",
+    "wrong": "Falsch",
+    "yourSolution": "Deine Lösung"
   },
   "profilePage": {
     "yourLanguage": "Deine Sprache",
