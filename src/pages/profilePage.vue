@@ -41,7 +41,8 @@
   <div v-if="profile" :class="{content:true, 'content-desktop' : !mobile}">
     <v-card class="card">
       <v-card-text>
-        <v-text-field
+        <v-img src="/images/st8ck-01.png" />
+        <!--<v-text-field
           v-model="profile.name"
           autocapitalize="off"
           autocomplete="off"
@@ -54,7 +55,7 @@
           name="no-autofill"
           spellcheck="false"
           variant="underlined"
-        />
+        />-->
       </v-card-text>
       <v-select v-model="profile.language" :items="languages" :label="$t('profilePage.yourLanguage')">
         <template #selection="{ item }">
