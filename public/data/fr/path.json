@@ -12,8 +12,8 @@
   "items": [
     {
       "id": "basics",
-      "dataUrl": "data/fr/basics/data.json",
-      "imageUrl": "data/fr/basics/image.png",
+      "dataUrl": "data/fr/data/basics.json",
+      "imageUrl": "",
       "title": [
         {
           "language": "de",
@@ -37,8 +37,8 @@
     },
     {
       "id": "numbers",
-      "dataUrl": "data/fr/numbers.json",
-      "imageUrl": "data/fr/image.png",
+      "dataUrl": "data/fr/st8cks/numbers_0-10.json",
+      "imageUrl": "",
       "title": [
         {
           "language": "de",

@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import type { StackItem } from '@/stores/CardPageStore.types.ts'
   import { useTheme } from 'vuetify/framework'
-  import {i18nTextByLanguage} from "@/stores/common.types.ts";
+  import { i18nTextByLanguage } from '@/stores/common.types.ts'
 
   interface Props {
     playAudioOnStart: boolean

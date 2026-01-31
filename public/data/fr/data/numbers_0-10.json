@@ -1,0 +1,172 @@
+{
+  "key": "french-numbers_0-10",
+  "foreignLanguage": "fr",
+  "title": [
+    {
+      "language": "de",
+      "text": "Zahlen (0-10)"
+    },
+    {
+      "language": "en",
+      "text": "Numbers (0-10)"
+    }
+  ],
+  "items": [
+    [
+      {
+        "foreign": "Zéro",
+        "audio": "zero.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Null"
+          },
+          {
+            "language": "en",
+            "text": "Zero"
+          }
+        ]
+      },
+      {
+        "foreign": "Un",
+        "audio": "un.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Eins"
+          },
+          {
+            "language": "en",
+            "text": "One"
+          }
+        ]
+      },
+      {
+        "foreign": "Deux",
+        "audio": "deux.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Zwei"
+          },
+          {
+            "language": "en",
+            "text": "Two"
+          }
+        ]
+      },
+      {
+        "foreign": "Trois",
+        "audio": "trois.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Drei"
+          },
+          {
+            "language": "en",
+            "text": "Three"
+          }
+        ]
+      },
+      {
+        "foreign": "Quatre",
+        "audio": "quatre.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Vier"
+          },
+          {
+            "language": "en",
+            "text": "Four"
+          }
+        ]
+      },
+      {
+        "foreign": "Cinq",
+        "audio": "cinq.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Fünf"
+          },
+          {
+            "language": "en",
+            "text": "Five"
+          }
+        ]
+      },
+      {
+        "foreign": "Six",
+        "audio": "six.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Sechs"
+          },
+          {
+            "language": "en",
+            "text": "Six"
+          }
+        ]
+      },
+      {
+        "foreign": "Sept",
+        "audio": "sept.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Sieben"
+          },
+          {
+            "language": "en",
+            "text": "Seven"
+          }
+        ]
+      },
+      {
+        "foreign": "Huit",
+        "audio": "huit.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Acht"
+          },
+          {
+            "language": "en",
+            "text": "Eight"
+          }
+        ]
+      },
+      {
+        "foreign": "Neuf",
+        "audio": "neuf.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Neun"
+          },
+          {
+            "language": "en",
+            "text": "Nine"
+          }
+        ]
+      },
+      {
+        "foreign": "Dix",
+        "audio": "dix.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Zehn"
+          },
+          {
+            "language": "en",
+            "text": "Ten"
+          }
+        ]
+      }
+    ]
+  ]
+}

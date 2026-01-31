@@ -40,9 +40,16 @@
 <template>
   <div v-if="profile" :class="{content:true, 'content-desktop' : !mobile}">
     <v-card class="card">
-      <v-card-text>
-        <v-img src="/images/st8ck-01.png" />
-        <!--<v-text-field
+      <v-img
+        class="align-end"
+        cover
+        gradient="to bottom, rgba(0,0,0,.0), rgba(0,0,0,.8)"
+        src="/images/st8ck-01.png">
+        <v-card-title class="title">{{ $t('profilePage.title')}}</v-card-title>
+        <v-card-text class="description"> {{$t('profilePage.description')}}</v-card-text>
+      </v-img>
+      <!-- <v-card-text>
+        <v-text-field
           v-model="profile.name"
           autocapitalize="off"
           autocomplete="off"
@@ -55,8 +62,8 @@
           name="no-autofill"
           spellcheck="false"
           variant="underlined"
-        />-->
-      </v-card-text>
+        />
+      </v-card-text>-->
       <v-select v-model="profile.language" :items="languages" :label="$t('profilePage.yourLanguage')">
         <template #selection="{ item }">
           <div class="languageItem">
@@ -89,6 +96,10 @@
 </template>
 
 <style scoped lang="sass">
+
+.title
+  white-space: normal
+
 .content
   display: flex
   flex-direction: column

@@ -83,20 +83,6 @@
       ]
     },
     {
-      "foreign": "Où sont les toilettes?",
-      "audio": "ou_sont_les_toilettes_.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Wo ist die Toilette?"
-        },
-        {
-          "language": "en",
-          "text": "Where is the bathroom?"
-        }
-      ]
-    },
-    {
       "foreign": "Enchanté",
       "audio": "enchante.wav",
       "native": [
@@ -166,34 +152,7 @@
         }
       ]
     },
-    {
-      "foreign": "Combien ça coûte?",
-      "audio": "combien_ca_coute_.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Wie viel kostet das?"
-        },
-        {
-          "language": "en",
-          "text": "How much does it cost?"
-        }
-      ]
-    },
-    {
-      "foreign": "C'est délicieux",
-      "audio": "c_est_delicieux.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Es ist lecker"
-        },
-        {
-          "language": "en",
-          "text": "It is delicious"
-        }
-      ]
-    },
+
     {
       "foreign": "Désolé / Pardon",
       "audio": "desole_pardon.wav",
@@ -223,20 +182,6 @@
       ]
     },
     {
-      "foreign": "Quelle heure est-il?",
-      "audio": "quelle_heure_est_il_.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Wie spät ist es?"
-        },
-        {
-          "language": "en",
-          "text": "What time is it?"
-        }
-      ]
-    },
-    {
       "foreign": "De rien",
       "audio": "de_rien.wav",
       "native": [
@@ -247,20 +192,6 @@
         {
           "language": "en",
           "text": "You're welcome"
-        }
-      ]
-    },
-    {
-      "foreign": "Pouvez-vous m'aider?",
-      "audio": "pouvez_vous_m_aider_.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Können Sie mir helfen?"
-        },
-        {
-          "language": "en",
-          "text": "Can you help me?"
         }
       ]
     },
