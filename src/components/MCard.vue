@@ -16,12 +16,10 @@
   const input = ref<string>()
   const swapped = ref<boolean>(false)
 
-  const theme = useTheme()
-
   // Watch for changes in props.data and reset reveal
   watch(() => props.data, () => {
     reveal.value = false
-    if (props.playAudioOnStart) {
+    if (props.playAudioOnStart && !swapped.value) {
       playAudio()
     }
   })
