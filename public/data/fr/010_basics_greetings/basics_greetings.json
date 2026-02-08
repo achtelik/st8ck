@@ -1,0 +1,228 @@
+{
+  "key": "french-basics",
+  "foreignLanguage": "fr",
+  "audioUrl": "data/fr/010_basics/audio",
+  "title": [
+    {
+      "language": "de",
+      "text": "Französische Grundlagen"
+    },
+    {
+      "language": "en",
+      "text": "French basics"
+    }
+  ],
+  "items": [
+    {
+      "foreign": "Bonjour",
+      "audio": "bonjour.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Hallo / Guten Tag"
+        },
+        {
+          "language": "en",
+          "text": "Hello / Good morning"
+        }
+      ]
+    },
+    {
+      "foreign": "S'il vous plaît",
+      "audio": "s_il_vous_plait.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Bitte"
+        },
+        {
+          "language": "en",
+          "text": "Please"
+        }
+      ]
+    },
+    {
+      "foreign": "Merci beaucoup",
+      "audio": "merci_beaucoup.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Vielen Dank"
+        },
+        {
+          "language": "en",
+          "text": "Thank you very much"
+        }
+      ]
+    },
+    {
+      "foreign": "Comment ça va?",
+      "audio": "comment_ca_va_.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Wie geht es dir?"
+        },
+        {
+          "language": "en",
+          "text": "How are you?"
+        }
+      ]
+    },
+    {
+      "foreign": "Je ne comprends pas",
+      "audio": "je_ne_comprends_pas.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Ich verstehe nicht"
+        },
+        {
+          "language": "en",
+          "text": "I don't understand"
+        }
+      ]
+    },
+    {
+      "foreign": "Enchanté",
+      "audio": "enchante.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Sehr erfreut / Angenehm"
+        },
+        {
+          "language": "en",
+          "text": "Nice to meet you"
+        }
+      ]
+    },
+    {
+      "foreign": "Excusez-moi",
+      "audio": "excusez_moi.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Entschuldigung"
+        },
+        {
+          "language": "en",
+          "text": "Excuse me"
+        }
+      ]
+    },
+    {
+      "foreign": "À bientôt",
+      "audio": "a_bientot.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Bis bald"
+        },
+        {
+          "language": "en",
+          "text": "See you soon"
+        }
+      ]
+    },
+    {
+      "foreign": "Parlez-vous anglais?",
+      "audio": "parlez_vous_anglais_.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Sprechen Sie Englisch?"
+        },
+        {
+          "language": "en",
+          "text": "Do you speak English?"
+        }
+      ]
+    },
+    {
+      "foreign": "Je voudrais...",
+      "audio": "je_voudrais_.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Ich möchte..."
+        },
+        {
+          "language": "en",
+          "text": "I would like..."
+        }
+      ]
+    },
+
+    {
+      "foreign": "Désolé / Pardon",
+      "audio": "desole_pardon.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Tut mir leid / Verzeihung"
+        },
+        {
+          "language": "en",
+          "text": "Sorry / Pardon me"
+        }
+      ]
+    },
+    {
+      "foreign": "Pas de problème",
+      "audio": "pas_de_probleme.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Kein Problem"
+        },
+        {
+          "language": "en",
+          "text": "No problem"
+        }
+      ]
+    },
+    {
+      "foreign": "De rien",
+      "audio": "de_rien.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Gern geschehen"
+        },
+        {
+          "language": "en",
+          "text": "You're welcome"
+        }
+      ]
+    },
+    {
+      "foreign": "D'accord",
+      "audio": "d_accord.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Okay / Einverstanden"
+        },
+        {
+          "language": "en",
+          "text": "Okay / I agree"
+        }
+      ]
+    },
+    {
+      "foreign": "Bonne journée",
+      "audio": "bonne_journee.wav",
+      "native": [
+        {
+          "language": "de",
+          "text": "Einen schönen Tag noch"
+        },
+        {
+          "language": "en",
+          "text": "Have a nice day"
+        }
+      ]
+    }
+  ]
+}
