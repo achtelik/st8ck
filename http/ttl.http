@@ -69,7 +69,8 @@ Content-Type: application/json
 {
   "model": "voice-fr-siwis-low",
   "backend": "piper",
-  "input": "Comment ça va?"
+  "input": "Comment ça va?",
+  "response_format": "mp3"
 }
 
 ###
