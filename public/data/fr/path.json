@@ -12,7 +12,7 @@
   "items": [
     {
       "id": "basics",
-      "dataUrl": "data/fr/data/basics.json",
+      "dataUrl": "data/fr/010_basics_greetings/basics_greetings.json",
       "imageUrl": "",
       "title": [
         {
@@ -37,7 +37,7 @@
     },
     {
       "id": "numbers",
-      "dataUrl": "data/fr/st8cks/numbers_0-10.json",
+      "dataUrl": "data/fr/020_numbers_0-10/numbers_0-10.json",
       "imageUrl": "",
       "title": [
         {
