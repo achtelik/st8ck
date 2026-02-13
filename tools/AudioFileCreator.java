@@ -12,8 +12,8 @@ import java.text.Normalizer;
 
 public class AudioFileCreator {
     public static void main(String[] args) {
-        Path jsonPfad = Paths.get("public", "data", "fr", "basics-en.json").normalize();
-        Path zielOrdner = jsonPfad.getParent().resolve("audio");
+        Path jsonPfad = Paths.get("public", "data", "fr", "data", "basics.json").normalize();
+        Path zielOrdner = jsonPfad.getParent().resolve("audio/basics");
 
         if (!Files.exists(jsonPfad)) {
             System.err.println("Datei nicht gefunden: " + jsonPfad.toAbsolutePath());
@@ -72,7 +72,7 @@ public class AudioFileCreator {
 
     private static void bearbeiteAudio(HttpClient client, String text, Path zielPfad) {
         String jsonBody = String.format(
-                "{\"model\": \"voice-fr-siwis-low\", \"backend\": \"piper\", \"input\": \"%s\"}",
+                "{\"model\": \"voice-fr-siwis-low\", \"backend\": \"piper\", \"input\": \"%s\", \"response_format\": \"mp3\"}",
                 text
         );
 

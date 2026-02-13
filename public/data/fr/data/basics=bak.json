@@ -1,0 +1,201 @@
+{
+  "key": "french-basics",
+  "foreignLanguage": "fr",
+  "title": [
+    {
+      "language": "de",
+      "text": "Französische Grundlagen"
+    },
+    {
+      "language": "en",
+      "text": "French basics"
+    }
+  ],
+  "items": [
+    [
+      {
+        "foreign": "Salut",
+        "native": [
+          { "language": "de", "text": "Hallo" },
+          { "language": "en", "text": "Hello" }
+        ]
+      },
+      {
+        "foreign": "Bonjour",
+        "native": [
+          { "language": "de", "text": "Guten Tag" },
+          { "language": "en", "text": "Good day / Good morning" }
+        ]
+      },
+      {
+        "foreign": "Comment t'appelles-tu ?",
+        "native": [
+          { "language": "de", "text": "Wie heißt du?" },
+          { "language": "en", "text": "What is your name?" }
+        ]
+      },
+      {
+        "foreign": "Je m'appelle ....",
+        "native": [
+          { "language": "de", "text": "Ich heiße ...." },
+          { "language": "en", "text": "My name is ...." }
+        ]
+      },
+      {
+        "foreign": "D'où viens-tu ?",
+        "native": [
+          { "language": "de", "text": "Woher kommst du?" },
+          { "language": "en", "text": "Where are you from?" }
+        ]
+      },
+      {
+        "foreign": "Je viens d'Allemagne.",
+        "native": [
+          { "language": "de", "text": "Ich komme aus Deutschland." },
+          { "language": "en", "text": "I am from Germany." }
+        ]
+      },
+      {
+        "foreign": "Enchanté de te rencontrer.",
+        "native": [
+          { "language": "de", "text": "Schön, dich kennenzulernen." },
+          { "language": "en", "text": "Nice to meet you." }
+        ]
+      },
+      {
+        "foreign": "Enchanté.",
+        "native": [
+          { "language": "de", "text": "Freut mich sehr." },
+          { "language": "en", "text": "Pleased to meet you." }
+        ]
+      },
+      {
+        "foreign": "Pouvons-nous nous voir demain ?",
+        "native": [
+          { "language": "de", "text": "Können wir uns morgen treffen?" },
+          { "language": "en", "text": "Can we meet tomorrow?" }
+        ]
+      },
+      {
+        "foreign": "On se voit demain.",
+        "audio": "on_se_voit_demain.wav",
+        "native": [
+          { "language": "de", "text": "Wir sehen uns morgen." },
+          { "language": "en", "text": "See you tomorrow." }
+        ]
+      },
+      {
+        "foreign": "Je rentre à la maison.",
+        "native": [
+          { "language": "de", "text": "Ich gehe nach Hause." },
+          { "language": "en", "text": "I'm going home." }
+        ]
+      },
+      {
+        "foreign": "À bientôt.",
+        "native": [
+          { "language": "de", "text": "Bis bald." },
+          { "language": "en", "text": "See you soon." }
+        ]
+      },
+      {
+        "foreign": "À plus tard.",
+        "native": [
+          { "language": "de", "text": "Bis später." },
+          { "language": "en", "text": "See you later." }
+        ]
+      },
+      {
+        "foreign": "Amuse-toi bien !",
+        "native": [
+          { "language": "de", "text": "Viel Spaß noch!" },
+          { "language": "en", "text": "Have fun!" }
+        ]
+      },
+      {
+        "foreign": "Bonne journée.",
+        "native": [
+          { "language": "de", "text": "Schönen Tag noch." },
+          { "language": "en", "text": "Have a nice day." }
+        ]
+      },
+      {
+        "foreign": "Je te souhaite une bonne journée.",
+        "native": [
+          { "language": "de", "text": "Ich wünsche dir einen schönen Tag." },
+          { "language": "en", "text": "I wish you a nice day." }
+        ]
+      },
+      {
+        "foreign": "Prends soin de toi !",
+        "native": [
+          { "language": "de", "text": "Mach's gut!" },
+          { "language": "en", "text": "Take care!" }
+        ]
+      },
+      {
+        "foreign": "Au revoir.",
+        "native": [
+          { "language": "de", "text": "Tschüss." },
+          { "language": "en", "text": "Bye / Goodbye" }
+        ]
+      },
+      {
+        "foreign": "S'il vous plaît.",
+        "native": [
+          { "language": "de", "text": "Bitte" },
+          { "language": "en", "text": "Please" }
+        ]
+      },
+      {
+        "foreign": "Merci.",
+        "native": [
+          { "language": "de", "text": "Danke" },
+          { "language": "en", "text": "Thank you" }
+        ]
+      },
+      {
+        "foreign": "Pardon / Excusez-moi.",
+        "native": [
+          { "language": "de", "text": "Entschuldigung" },
+          { "language": "en", "text": "Excuse me / Sorry" }
+        ]
+      },
+      {
+        "foreign": "Oui.",
+        "native": [
+          { "language": "de", "text": "Ja" },
+          { "language": "en", "text": "Yes" }
+        ]
+      },
+      {
+        "foreign": "Non.",
+        "native": [
+          { "language": "de", "text": "Nein" },
+          { "language": "en", "text": "No" }
+        ]
+      },
+      {
+        "foreign": "Peut-être.",
+        "native": [
+          { "language": "de", "text": "Vielleicht" },
+          { "language": "en", "text": "Maybe" }
+        ]
+      },
+      {
+        "foreign": "Je comprends un peu.",
+        "native": [
+          { "language": "de", "text": "Ich verstehe ein bisschen." },
+          { "language": "en", "text": "I understand a little." }
+        ]
+      },
+      {
+        "foreign": "Je ne sais pas.",
+        "native": [
+          { "language": "de", "text": "Ich weiß es nicht." },
+          { "language": "en", "text": "I don't know." }
+        ]
+      }
+    ]
+  ]
+}

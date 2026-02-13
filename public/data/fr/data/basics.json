@@ -12,216 +12,371 @@
     }
   ],
   "items": [
-    {
-      "foreign": "Bonjour",
-      "audio": "bonjour.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Hallo / Guten Tag"
-        },
-        {
-          "language": "en",
-          "text": "Hello / Good morning"
-        }
-      ]
-    },
-    {
-      "foreign": "S'il vous plaît",
-      "audio": "s_il_vous_plait.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Bitte"
-        },
-        {
-          "language": "en",
-          "text": "Please"
-        }
-      ]
-    },
-    {
-      "foreign": "Merci beaucoup",
-      "audio": "merci_beaucoup.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Vielen Dank"
-        },
-        {
-          "language": "en",
-          "text": "Thank you very much"
-        }
-      ]
-    },
-    {
-      "foreign": "Comment ça va?",
-      "audio": "comment_ca_va_.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Wie geht es dir?"
-        },
-        {
-          "language": "en",
-          "text": "How are you?"
-        }
-      ]
-    },
-    {
-      "foreign": "Je ne comprends pas",
-      "audio": "je_ne_comprends_pas.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Ich verstehe nicht"
-        },
-        {
-          "language": "en",
-          "text": "I don't understand"
-        }
-      ]
-    },
-    {
-      "foreign": "Enchanté",
-      "audio": "enchante.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Sehr erfreut / Angenehm"
-        },
-        {
-          "language": "en",
-          "text": "Nice to meet you"
-        }
-      ]
-    },
-    {
-      "foreign": "Excusez-moi",
-      "audio": "excusez_moi.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Entschuldigung"
-        },
-        {
-          "language": "en",
-          "text": "Excuse me"
-        }
-      ]
-    },
-    {
-      "foreign": "À bientôt",
-      "audio": "a_bientot.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Bis bald"
-        },
-        {
-          "language": "en",
-          "text": "See you soon"
-        }
-      ]
-    },
-    {
-      "foreign": "Parlez-vous anglais?",
-      "audio": "parlez_vous_anglais_.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Sprechen Sie Englisch?"
-        },
-        {
-          "language": "en",
-          "text": "Do you speak English?"
-        }
-      ]
-    },
-    {
-      "foreign": "Je voudrais...",
-      "audio": "je_voudrais_.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Ich möchte..."
-        },
-        {
-          "language": "en",
-          "text": "I would like..."
-        }
-      ]
-    },
-
-    {
-      "foreign": "Désolé / Pardon",
-      "audio": "desole_pardon.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Tut mir leid / Verzeihung"
-        },
-        {
-          "language": "en",
-          "text": "Sorry / Pardon me"
-        }
-      ]
-    },
-    {
-      "foreign": "Pas de problème",
-      "audio": "pas_de_probleme.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Kein Problem"
-        },
-        {
-          "language": "en",
-          "text": "No problem"
-        }
-      ]
-    },
-    {
-      "foreign": "De rien",
-      "audio": "de_rien.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Gern geschehen"
-        },
-        {
-          "language": "en",
-          "text": "You're welcome"
-        }
-      ]
-    },
-    {
-      "foreign": "D'accord",
-      "audio": "d_accord.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Okay / Einverstanden"
-        },
-        {
-          "language": "en",
-          "text": "Okay / I agree"
-        }
-      ]
-    },
-    {
-      "foreign": "Bonne journée",
-      "audio": "bonne_journee.wav",
-      "native": [
-        {
-          "language": "de",
-          "text": "Einen schönen Tag noch"
-        },
-        {
-          "language": "en",
-          "text": "Have a nice day"
-        }
-      ]
-    }
+    [
+      {
+        "foreign": "Salut",
+        "audio": "salut.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Hallo"
+          },
+          {
+            "language": "en",
+            "text": "Hello"
+          }
+        ]
+      },
+      {
+        "foreign": "Bonjour",
+        "audio": "bonjour.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Guten Tag"
+          },
+          {
+            "language": "en",
+            "text": "Good day / Good morning"
+          }
+        ]
+      },
+      {
+        "foreign": "Comment t'appelles-tu ?",
+        "audio": "comment_t_appelles_tu_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Wie heißt du?"
+          },
+          {
+            "language": "en",
+            "text": "What is your name?"
+          }
+        ]
+      },
+      {
+        "foreign": "Je m'appelle ....",
+        "audio": "je_m_appelle_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Ich heiße ...."
+          },
+          {
+            "language": "en",
+            "text": "My name is ...."
+          }
+        ]
+      },
+      {
+        "foreign": "D'où viens-tu ?",
+        "audio": "d_ou_viens_tu_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Woher kommst du?"
+          },
+          {
+            "language": "en",
+            "text": "Where are you from?"
+          }
+        ]
+      },
+      {
+        "foreign": "Je viens d'Allemagne.",
+        "audio": "je_viens_d_allemagne_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Ich komme aus Deutschland."
+          },
+          {
+            "language": "en",
+            "text": "I am from Germany."
+          }
+        ]
+      },
+      {
+        "foreign": "Enchanté de te rencontrer.",
+        "audio": "enchante_de_te_rencontrer_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Schön, dich kennenzulernen."
+          },
+          {
+            "language": "en",
+            "text": "Nice to meet you."
+          }
+        ]
+      },
+      {
+        "foreign": "Enchanté.",
+        "audio": "enchante_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Freut mich sehr."
+          },
+          {
+            "language": "en",
+            "text": "Pleased to meet you."
+          }
+        ]
+      },
+      {
+        "foreign": "Pouvons-nous nous voir demain ?",
+        "audio": "pouvons_nous_nous_voir_demain_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Können wir uns morgen treffen?"
+          },
+          {
+            "language": "en",
+            "text": "Can we meet tomorrow?"
+          }
+        ]
+      },
+      {
+        "foreign": "On se voit demain.",
+        "audio": "on_se_voit_demain_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Wir sehen uns morgen."
+          },
+          {
+            "language": "en",
+            "text": "See you tomorrow."
+          }
+        ]
+      },
+      {
+        "foreign": "Je rentre à la maison.",
+        "audio": "je_rentre_a_la_maison_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Ich gehe nach Hause."
+          },
+          {
+            "language": "en",
+            "text": "I'm going home."
+          }
+        ]
+      },
+      {
+        "foreign": "À bientôt.",
+        "audio": "a_bientot_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Bis bald."
+          },
+          {
+            "language": "en",
+            "text": "See you soon."
+          }
+        ]
+      },
+      {
+        "foreign": "À plus tard.",
+        "audio": "a_plus_tard_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Bis später."
+          },
+          {
+            "language": "en",
+            "text": "See you later."
+          }
+        ]
+      },
+      {
+        "foreign": "Amuse-toi bien !",
+        "audio": "amuse_toi_bien_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Viel Spaß noch!"
+          },
+          {
+            "language": "en",
+            "text": "Have fun!"
+          }
+        ]
+      },
+      {
+        "foreign": "Bonne journée.",
+        "audio": "bonne_journee_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Schönen Tag noch."
+          },
+          {
+            "language": "en",
+            "text": "Have a nice day."
+          }
+        ]
+      },
+      {
+        "foreign": "Je te souhaite une bonne journée.",
+        "audio": "je_te_souhaite_une_bonne_journee_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Ich wünsche dir einen schönen Tag."
+          },
+          {
+            "language": "en",
+            "text": "I wish you a nice day."
+          }
+        ]
+      },
+      {
+        "foreign": "Prends soin de toi !",
+        "audio": "prends_soin_de_toi_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Mach's gut!"
+          },
+          {
+            "language": "en",
+            "text": "Take care!"
+          }
+        ]
+      },
+      {
+        "foreign": "Au revoir.",
+        "audio": "au_revoir_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Tschüss."
+          },
+          {
+            "language": "en",
+            "text": "Bye / Goodbye"
+          }
+        ]
+      },
+      {
+        "foreign": "S'il vous plaît.",
+        "audio": "s_il_vous_plait_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Bitte"
+          },
+          {
+            "language": "en",
+            "text": "Please"
+          }
+        ]
+      },
+      {
+        "foreign": "Merci.",
+        "audio": "merci_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Danke"
+          },
+          {
+            "language": "en",
+            "text": "Thank you"
+          }
+        ]
+      },
+      {
+        "foreign": "Pardon / Excusez-moi.",
+        "audio": "pardon_excusez_moi_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Entschuldigung"
+          },
+          {
+            "language": "en",
+            "text": "Excuse me / Sorry"
+          }
+        ]
+      },
+      {
+        "foreign": "Oui.",
+        "audio": "oui_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Ja"
+          },
+          {
+            "language": "en",
+            "text": "Yes"
+          }
+        ]
+      },
+      {
+        "foreign": "Non.",
+        "audio": "non_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Nein"
+          },
+          {
+            "language": "en",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "foreign": "Peut-être.",
+        "audio": "peut_etre_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Vielleicht"
+          },
+          {
+            "language": "en",
+            "text": "Maybe"
+          }
+        ]
+      },
+      {
+        "foreign": "Je comprends un peu.",
+        "audio": "je_comprends_un_peu_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Ich verstehe ein bisschen."
+          },
+          {
+            "language": "en",
+            "text": "I understand a little."
+          }
+        ]
+      },
+      {
+        "foreign": "Je ne sais pas.",
+        "audio": "je_ne_sais_pas_.wav",
+        "native": [
+          {
+            "language": "de",
+            "text": "Ich weiß es nicht."
+          },
+          {
+            "language": "en",
+            "text": "I don't know."
+          }
+        ]
+      }
+    ]
   ]
 }
