@@ -12,8 +12,8 @@ import java.text.Normalizer;
 
 public class AudioFileCreator {
     public static void main(String[] args) {
-        Path jsonPfad = Paths.get("public", "data", "fr", "data", "basics.json").normalize();
-        Path zielOrdner = jsonPfad.getParent().resolve("audio/basics");
+        Path jsonPfad = Paths.get("public/data/fr/010_basics/basics.json").normalize();
+        Path zielOrdner = jsonPfad.getParent().resolve("audio");
 
         if (!Files.exists(jsonPfad)) {
             System.err.println("Datei nicht gefunden: " + jsonPfad.toAbsolutePath());
@@ -44,8 +44,18 @@ public class AudioFileCreator {
                         .toLowerCase()
                         .replaceAll("[^a-z0-9]", "_")
                         .replaceAll("_+", "_");
-                String dateiName = safeName + ".wav";
+                String dateiName = safeName + ".mp3";
 
+
+                // Ziel ordner anlegen falls nicht vorhanden
+                if (!Files.exists(zielOrdner)) {
+                    try {
+                        Files.createDirectories(zielOrdner);
+                    } catch (IOException e) {
+                        System.err.println("Zielordner konnte nicht erstellt werden: " + zielOrdner.toAbsolutePath());
+                        return;
+                    }
+                }
                 // 2. Audio-Request (TTS)
                 bearbeiteAudio(client, originalText, zielOrdner.resolve(dateiName));
 
@@ -72,7 +82,8 @@ public class AudioFileCreator {
 
     private static void bearbeiteAudio(HttpClient client, String text, Path zielPfad) {
         String jsonBody = String.format(
-                "{\"model\": \"voice-fr-siwis-low\", \"backend\": \"piper\", \"input\": \"%s\", \"response_format\": \"mp3\"}",
+                "{\"model\": \"voice-fr-siwis-medium\", \"backend\": \"piper\", \"input\": \"%s\", \"response_format\": \"mp3\"}",
+                //"{\"model\": \"voice-fr_FR-upmc-medium\", \"backend\": \"piper\", \"input\": \"%s\", \"response_format\": \"mp3\"}",
                 text
         );
 

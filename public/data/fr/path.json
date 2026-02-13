@@ -12,7 +12,7 @@
   "items": [
     {
       "id": "basics",
-      "dataUrl": "data/fr/010_basics_greetings/basics_greetings.json",
+      "dataUrl": "data/fr/010_basics/basics.json",
       "imageUrl": "",
       "title": [
         {

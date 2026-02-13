@@ -1,12 +1,12 @@
 <script setup lang="ts">
   import type { StackItem } from '@/stores/CardPageStore.types.ts'
-  import { useTheme } from 'vuetify/framework'
   import { i18nTextByLanguage } from '@/stores/common.types.ts'
 
   interface Props {
     playAudioOnStart: boolean
     foreignLanguage: string
     nativeLanguage: string
+    audioRootUrl: string
     data: StackItem
   }
 
@@ -32,6 +32,9 @@
 
   function triggerReveal () {
     reveal.value = true
+    if (swapped.value) {
+      playAudio()
+    }
   }
 
   function triggerCorrect () {
@@ -56,7 +59,7 @@
   }
 
   function playAudio () {
-    new Audio(`data/fr/audio/${props.data.audio}`).play().catch(error => {
+    new Audio(`${props.audioRootUrl}/${props.data.audio}`).play().catch(error => {
       console.log('Wiedergabe verhindert: Nutzerinteraktion erforderlich!', error)
     })
   }

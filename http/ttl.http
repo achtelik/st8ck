@@ -67,7 +67,7 @@ POST http://localhost:8080/tts
 Content-Type: application/json
 
 {
-  "model": "voice-fr-siwis-low",
+  "model": "voice-fr_FR-upmc-medium",
   "backend": "piper",
   "input": "Comment ça va?",
   "response_format": "mp3"

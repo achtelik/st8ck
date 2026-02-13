@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+  import type { LocationQuery } from 'vue-router'
   import { useI18n } from 'vue-i18n'
   import { useDisplay } from 'vuetify/framework'
   import MCard from '@/components/MCard.vue'
@@ -47,12 +48,16 @@
     store.increaseDataIndex()
   }
 
-  watch(() => route.query, query => {
+  function handleQueryUpdate (query: LocationQuery) {
     if (query.dataUrl) store.loadData(query.dataUrl.toString())
+  }
+
+  watch(() => route.query, query => {
+    handleQueryUpdate(query)
   })
 
   onMounted(() => {
-    if (route.query.dataUrl) store.loadData(route.query.dataUrl.toString())
+    handleQueryUpdate(route.query)
   })
 </script>
 
@@ -60,6 +65,7 @@
   <div v-if="data && dataEntry" :class="{content:true, 'content-desktop' : !mobile}">
     <m-card
       v-if="!finished"
+      :audio-root-url="data.audioUrl"
       class="card"
       :data="dataEntry"
       :foreign-language="data?.foreignLanguage"

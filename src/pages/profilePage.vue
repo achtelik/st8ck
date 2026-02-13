@@ -44,9 +44,10 @@
         class="align-end"
         cover
         gradient="to bottom, rgba(0,0,0,.0), rgba(0,0,0,.8)"
-        src="/images/st8ck-01.png">
-        <v-card-title class="title">{{ $t('profilePage.title')}}</v-card-title>
-        <v-card-text class="description"> {{$t('profilePage.description')}}</v-card-text>
+        src="/images/st8ck-01.png"
+      >
+        <v-card-title class="title">{{ $t('profilePage.title') }}</v-card-title>
+        <v-card-text class="description"> {{ $t('profilePage.description') }}</v-card-text>
       </v-img>
       <!-- <v-card-text>
         <v-text-field
